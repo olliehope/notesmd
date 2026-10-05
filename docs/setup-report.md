@@ -147,6 +147,7 @@ The source layout is intentionally empty and small. Future core/domain/storage/n
 - Switching to 26.1.2, dry-running `runActiveClient`, and resetting to 1.21.11 succeed. An actual Minecraft UI was not launched.
 - Kotlin/Java compilation and application-test tasks report `NO-SOURCE` as expected. There are no Kotlin/Java implementation files or packaged implementation classes. The source-less scaffold builds without adding dummy code.
 - An isolated local clone of foundation commit `19c71aa`, with no project caches, passes `:spotlessCheck :checkAll :buildAll`. A second fresh packaging run using `:clean :checkAll :buildAll --no-build-cache --rerun-tasks` also passes with 52 executed tasks. Independent JAR inspection finds no implementation files/classes, and all five production SHA-256 hashes match the original build.
+- After GitHub identity and MIT licensing were configured, local checks/builds passed again. The [hosted CI run](https://github.com/olliehope/notesmd/actions/runs/37293709387) passed all eight jobs and uploaded five production artifacts. Downloaded Linux-built JAR hashes matched the corresponding local Windows builds. Repository settings and release-candidate verification are recorded in [github.md](github.md).
 
 Known integration debt is limited to upstream warnings: Stonecutter 0.9.8 warns about the root `base` plugin applied by Spotless; initial Loom remapping can emit Fabric API duplicate-class/mapping-modifier warnings. They do not fail these checks/builds, and no custom workaround is added.
 

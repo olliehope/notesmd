@@ -33,6 +33,8 @@ All supported targets must continue to build unless a deliberate support-policy 
 
 Describe the concrete change, its reason, and the checks performed. For compatibility fixes, identify the Minecraft versions tested. Avoid committing `.idea/`, run directories, logs, caches, generated source trees, or secrets. Keep the Gradle Wrapper files and intended infrastructure configuration committed.
 
+GitHub requires the `CI passed` check on pull requests into `main`. It covers formatting and every target build; update the branch when the base changes and resolve review conversations before merging. No external approving review is mandatory for this solo-owner repository. Squash merges are the normal merge method.
+
 For bugs, include the exact Minecraft, Fabric Loader, and Notes MD versions, reproduction steps, and relevant logs. Remove tokens and personal information from logs before sharing them. Report infrastructure-only issues as such while the scaffold has no implemented functionality.
 
 Record user-visible changes in the `Unreleased` section of [CHANGELOG.md](CHANGELOG.md). There is no released feature history yet. Release preparation is documented in [docs/releases.md](docs/releases.md).
