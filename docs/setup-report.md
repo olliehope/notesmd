@@ -30,11 +30,13 @@ notesmd/
 ├── build.gradle.kts
 ├── docs/
 │   ├── development.md
+│   ├── github.md
 │   ├── releases.md
 │   ├── setup-report.md
 │   └── tooling.md
 ├── gradle.properties
 ├── gradle/wrapper/
+│   ├── LICENSE
 │   ├── gradle-wrapper.jar
 │   └── gradle-wrapper.properties
 ├── gradlew
@@ -49,7 +51,7 @@ notesmd/
         └── assets/notesmd/icon.png
 ```
 
-Git is initialized on `main`, with foundation commit `19c71aa` (`Set up Kotlin Fabric multi-version foundation`) and no remotes. The wrapper scripts, JAR, properties, metadata, and intended configuration are committed. The Unix wrapper has executable Git mode `100755`. No remote branches, publication, or external repository settings have been created.
+Git is initialized on `main`, with foundation commit `19c71aa` (`Set up Kotlin Fabric multi-version foundation`). The remote `origin` points to the public [olliehope/notesmd repository](https://github.com/olliehope/notesmd). The wrapper scripts, JAR, properties, metadata, and intended configuration are committed. The Unix wrapper has executable Git mode `100755`. Notes MD uses the MIT license; the wrapper retains Apache-2.0. No mod releases have been published. Repository settings and hosted validation are recorded in [github.md](github.md).
 
 Generated local directories include `versions/<minecraft>/`, per-target builds, `.gradle/`, `run/<minecraft>/`, and collected production files in `build/libs/`.
 
@@ -123,7 +125,7 @@ Sync the Gradle project in IntelliJ after switching. Generated client run config
 
 ## CI, updates, and release foundations
 
-CI runs on `main` pushes, pull requests, and manual dispatch. It validates the wrapper through `setup-gradle`, checks formatting, installs Java 21/25, checks/builds all target matrix jobs without skipping failures, and uploads production JARs. Actions use pinned revisions, minimal read permissions, and no publishing secrets. Hosted GitHub CI has not been executed because there is no remote repository.
+CI runs on `main` pushes, pull requests, and manual dispatch. It validates the wrapper through `setup-gradle`, checks formatting, installs Java 21/25, checks/builds all target matrix jobs without skipping failures, and uploads production JARs. The stable `CI passed` check succeeds only when discovery, formatting, and every build succeed. Actions use pinned revisions, minimal read permissions, and no publishing secrets. See [github.md](github.md) for hosted run results and repository settings.
 
 Dependabot groups weekly Actions updates and supported Spotless/Foojay Gradle updates. The central custom Stonecutter TOML is outside its Gradle parser's coverage, so Minecraft/Fabric/Kotlin/Loom/Stonecutter upgrades require coordinated manual verification. No automatic target replacement or compatibility upgrade is configured.
 
@@ -131,7 +133,7 @@ The manually dispatched release-candidate workflow verifies/builds every target 
 
 ## Replacements, omissions, and assumptions
 
-Before public distribution, replace the TOML's Maven/package group, author, description, homepage/sources/issues URLs, and license identifier; replace the license placeholder with a real license and the placeholder PNG with a project icon. The current license file grants no project license. The mod ID/name and initial semantic version follow the request, and exact game compatibility is deliberately conservative.
+Identity is configured for Ollie Hope with package/Maven group `io.github.olliehope.notesmd`, repository contact links, and the MIT license selected by the owner. Replace the placeholder PNG with a final project icon before releasing the mod and update the description as functionality is implemented. The mod ID/name and initial semantic version follow the request, and exact game compatibility is deliberately conservative.
 
 No Mod Menu dependency/integration, Detekt, publication plugins, mixin config/classes, access widener/class tweaker, initializer, application tests, Markdown parser, config/UI framework, database, or other application library is present. These require actual implementation needs or a publication destination. Fabric Language Kotlin's normal bundled runtime libraries do not introduce application coroutine infrastructure. Optional future setup is documented without source examples or nonexistent entrypoint references.
 

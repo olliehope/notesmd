@@ -1,5 +1,7 @@
 # Notes MD
 
+[![CI](https://github.com/olliehope/notesmd/actions/workflows/ci.yml/badge.svg)](https://github.com/olliehope/notesmd/actions/workflows/ci.yml)
+
 `notesmd` is the foundation for a **client-only Fabric mod written in Kotlin**. The intended project is a generic Markdown-style in-game notes application with pages, tabs, and links between notes. Those features have not been implemented.
 
 This repository currently contains build infrastructure, metadata, an empty Kotlin source directory, and a placeholder icon. It contains **zero Kotlin or Java implementation source files**. Fabric metadata intentionally has no entrypoints or mixin declarations; the resulting scaffold JAR is inert and provides no gameplay functionality.
@@ -69,7 +71,7 @@ To add another Minecraft target, add it to `settings.gradle.kts`, add its exact 
 
 ## Before development and distribution
 
-Replace the obvious `REPLACE_ME` identity values in `stonecutter.properties.toml`: Maven/package group, author, description, contact URLs, and license identifier. Replace `LICENSE` with the chosen license text and `src/main/resources/assets/notesmd/icon.png` with the project's own icon. The current license file is a placeholder and grants no open-source license.
+Project identity is configured for [Ollie Hope](https://github.com/olliehope), with Maven/package group `io.github.olliehope.notesmd` and the repository's homepage, source, and issue URLs. Notes MD is licensed under [MIT](LICENSE). The Gradle Wrapper retains its upstream [Apache-2.0 license](gradle/wrapper/LICENSE). Replace `src/main/resources/assets/notesmd/icon.png` with the project's final icon before release, and review the description as features are implemented.
 
 Kotlin `2.4.20` and Fabric Language Kotlin `1.14.1+kotlin.2.4.20` are paired globally. Fabric Loader is pinned globally at `0.19.5`, satisfying the runtime's loader requirement. Fabric API is pinned separately for each exact Minecraft target. Future target-specific overrides belong in the TOML configuration. Fabric Language Kotlin supplies the runtime Kotlin libraries; no application libraries have been chosen.
 

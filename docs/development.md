@@ -12,7 +12,7 @@ Loom-generated run configurations are preferred to manually maintained IDE files
 
 ## Shared source layout
 
-The single empty `src/main/kotlin/` directory is ready for the owner's first source file. Choose a real package namespace by replacing `mod.group` before adding files. Do not commit generated classes or anything under `versions/<target>/build/`.
+The single empty `src/main/kotlin/` directory is ready for the owner's first source file. The package namespace is `io.github.olliehope.notesmd`, centralized as `mod.group`. Do not commit generated classes or anything under `versions/<target>/build/`.
 
 The following are possible future areas, not a required package hierarchy or existing implementations:
 

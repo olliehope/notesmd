@@ -18,7 +18,7 @@ Collected production artifacts live in root `build/libs/`. Use freshly built col
 
 ## Preparing a candidate
 
-Before any public distribution, replace all `REPLACE_ME` identity/contact values, choose a license, replace both the `LICENSE` text and metadata license identifier, and replace the placeholder icon. The current license placeholder grants no project license. Ensure real entrypoints and optional integration references correspond to implemented classes, and retain the client-only environment.
+Project identity and contact links point to `olliehope/notesmd`, and Notes MD uses the MIT license. The Gradle Wrapper retains its Apache-2.0 license. Before a release, replace the placeholder icon and review the description against actual functionality. Ensure real entrypoints and optional integration references correspond to implemented classes, and retain the client-only environment.
 
 Update `CHANGELOG.md` under `Unreleased` with actual changes. When publishing is eventually enabled, move reviewed release notes into a dated version section; do not invent feature history for infrastructure work.
 

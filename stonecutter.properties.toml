@@ -1,14 +1,14 @@
-# Project identity. Replace every REPLACE_ME value before a public release.
+# Project identity. The project icon is still a placeholder.
 mod.id = "notesmd"
 mod.name = "Notes MD"
-mod.group = "io.github.REPLACE_ME.notesmd"
+mod.group = "io.github.olliehope.notesmd"
 mod.version = "0.1.0"
-mod.author = "REPLACE_ME"
-mod.description = "REPLACE_ME: A client-only Markdown-style notes mod. Infrastructure scaffold; no features implemented."
-mod.homepage = "https://example.invalid/REPLACE_ME/notesmd"
-mod.sources = "https://example.invalid/REPLACE_ME/notesmd/sources"
-mod.issues = "https://example.invalid/REPLACE_ME/notesmd/issues"
-mod.license = "LicenseRef-REPLACE_ME"
+mod.author = "Ollie Hope"
+mod.description = "A client-only Markdown-style notes mod for Fabric. Infrastructure scaffold; no features implemented."
+mod.homepage = "https://github.com/olliehope/notesmd"
+mod.sources = "https://github.com/olliehope/notesmd"
+mod.issues = "https://github.com/olliehope/notesmd/issues"
+mod.license = "MIT"
 mod.icon = "assets/notesmd/icon.png"
 
 # Coherent, pinned Kotlin/runtime pair. Per-target overrides can be added below.

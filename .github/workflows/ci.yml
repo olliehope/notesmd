@@ -119,3 +119,21 @@ jobs:
             !build/libs/*-javadoc.jar
           if-no-files-found: error
           retention-days: 14
+
+  gate:
+    name: CI passed
+    if: ${{ always() }}
+    needs: [targets, formatting, build]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require formatting and every Minecraft target to pass
+        env:
+          TARGETS_RESULT: ${{ needs.targets.result }}
+          FORMATTING_RESULT: ${{ needs.formatting.result }}
+          BUILD_RESULT: ${{ needs.build.result }}
+        run: |
+          if [[ "$TARGETS_RESULT" != "success" || "$FORMATTING_RESULT" != "success" || "$BUILD_RESULT" != "success" ]]; then
+            echo "CI failed: targets=$TARGETS_RESULT formatting=$FORMATTING_RESULT build=$BUILD_RESULT"
+            exit 1
+          fi
