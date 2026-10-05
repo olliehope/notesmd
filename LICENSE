@@ -1,0 +1,7 @@
+REPLACE_ME: No project license has been selected.
+
+This is a license placeholder, not an open-source license grant.
+Before distributing Notes MD, replace this file with the complete text of your
+chosen license and update mod.license in stonecutter.properties.toml.
+
+The Gradle Wrapper files retain their upstream Apache-2.0 notices.

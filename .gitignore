@@ -1,0 +1,37 @@
+# Gradle, Kotlin and generated Stonecutter projects/output
+.gradle/
+.kotlin/
+**/build/
+.stonecutter/
+versions/
+
+# IDE state
+.idea/
+*.iml
+*.ipr
+*.iws
+.vs/
+.vscode/
+*.sln.iml
+
+# Minecraft development state
+run/
+**/run/
+logs/
+crash-reports/
+*.log
+
+# OS and scratch files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.temp
+*.bak
+*~
+.env
+.env.*
+!.env.example
+
+# Wrapper JAR is required and must be tracked.
+!gradle/wrapper/gradle-wrapper.jar

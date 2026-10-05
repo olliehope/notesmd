@@ -1,0 +1,31 @@
+version: 2
+
+# Actions are updated automatically in reviewed, grouped weekly pull requests.
+# Dependabot's Gradle parser does not understand the custom central Stonecutter
+# TOML target configuration. Minecraft, Loader, Fabric API, Fabric Language Kotlin,
+# Kotlin, Loom and Stonecutter therefore require coordinated manual updates.
+# A Gradle entry can update any supported declarations it discovers in Gradle
+# scripts or gradle.properties; it cannot guarantee coverage of TOML-held versions.
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 2
+    groups:
+      github-actions:
+        patterns: ['*']
+
+  - package-ecosystem: gradle
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 2
+    allow:
+      - dependency-name: 'com.diffplug.spotless:*'
+      - dependency-name: 'org.gradle.toolchains.foojay-resolver-convention:*'
+      - dependency-name: 'org.gradle.toolchains.foojay-resolver:*'
+    groups:
+      build-tooling:
+        patterns: ['*']
+        update-types: [minor, patch]

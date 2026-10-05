@@ -1,0 +1,37 @@
+# Project identity. Replace every REPLACE_ME value before a public release.
+mod.id = "notesmd"
+mod.name = "Notes MD"
+mod.group = "io.github.REPLACE_ME.notesmd"
+mod.version = "0.1.0"
+mod.author = "REPLACE_ME"
+mod.description = "REPLACE_ME: A client-only Markdown-style notes mod. Infrastructure scaffold; no features implemented."
+mod.homepage = "https://example.invalid/REPLACE_ME/notesmd"
+mod.sources = "https://example.invalid/REPLACE_ME/notesmd/sources"
+mod.issues = "https://example.invalid/REPLACE_ME/notesmd/issues"
+mod.license = "LicenseRef-REPLACE_ME"
+mod.icon = "assets/notesmd/icon.png"
+
+# Coherent, pinned Kotlin/runtime pair. Per-target overrides can be added below.
+deps.fabric_loader = "0.19.5"
+deps.fabric_language_kotlin = "1.14.1+kotlin.2.4.20"
+loomx.loom_version = "1.18.2"
+
+["1.21.1"]
+java.version = 21
+deps.fabric_api = "0.116.17+1.21.1"
+
+["1.21.5"]
+java.version = 21
+deps.fabric_api = "0.128.2+1.21.5"
+
+["1.21.8"]
+java.version = 21
+deps.fabric_api = "0.136.1+1.21.8"
+
+["1.21.11"]
+java.version = 21
+deps.fabric_api = "0.141.6+1.21.11"
+
+["26.1.2"]
+java.version = 25
+deps.fabric_api = "0.155.3+26.1.2"

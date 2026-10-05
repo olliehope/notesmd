@@ -1,0 +1,48 @@
+name: Bug report
+description: Report a reproducible build, development workflow, or mod problem.
+title: '[Bug] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Notes MD currently contains repository infrastructure only. Describe a reproducible problem and avoid posting private notes or credentials in logs.
+  - type: input
+    id: minecraft
+    attributes:
+      label: Minecraft target
+      description: Use the exact target from the central version configuration.
+      placeholder: 1.21.8
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Mod version or Git commit
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, Java version, and Fabric Loader version where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include the exact Gradle command for infrastructure problems.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Paste the relevant exception or attach a sanitized log.
+      render: text
